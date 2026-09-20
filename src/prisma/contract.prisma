@@ -1,21 +1,39 @@
 // use prisma-8
-
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  username  String?
-  name      String?
-  posts     Post[]
-  createdAt TimestamptzString @default(now())
-  updatedAt temporal.updatedAtString()
+model Profile {
+  id          String            @id @default(uuid())
+  name        String
+  description String?
+  socialLinks String[]          @default([])
+  skills      Skill[]
+  experiences Experience[]
+  projects    Project[]
+  createdAt   TimestamptzString @default(now())
 }
 
-model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
-  createdAt TimestamptzString @default(now())
-  updatedAt temporal.updatedAtString()
+model Skill {
+  id        String  @id @default(uuid())
+  name      String
+  category  String?
+  profileId String
+  profile   Profile @relation(fields:[profileId], references:[id], onDelete: Cascade)
+}
+
+model Experience {
+  id           String             @id @default(uuid())
+  company      String
+  position     String
+  startDate    TimestamptzString
+  endDate      TimestamptzString?
+  achievements String[]
+  profileId    String
+  profile      Profile            @relation(fields:[profileId], references:[id], onDelete: Cascade)
+}
+
+model Project {
+  id          String  @id @default(uuid())
+  name        String
+  description String?
+  url         String
+  profileId   String
+  profile     Profile @relation(fields:[profileId], references:[id], onDelete: Cascade)
 }

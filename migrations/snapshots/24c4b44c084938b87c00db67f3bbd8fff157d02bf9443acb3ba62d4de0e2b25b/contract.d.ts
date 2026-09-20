@@ -34,7 +34,7 @@ import type {
 } from '@prisma/orm-postgres/contract/types';
 
 export type StorageHash =
-  StorageHashBase<'95164a7343b0708183c2cdf1146e15ea249494a83bb3bba14be8982652823b1e'>;
+  StorageHashBase<'24c4b44c084938b87c00db67f3bbd8fff157d02bf9443acb3ba62d4de0e2b25b'>;
 export type ExecutionHash =
   ExecutionHashBase<'127c1129999cfbc675cc2835d5bc20129b9e3b55cfdddc6683d875aefb329894'>;
 export type ProfileHash =
@@ -246,8 +246,8 @@ export type FieldOutputTypes = {
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly company: CodecTypes['pg/text@1']['output'];
       readonly position: CodecTypes['pg/text@1']['output'];
-      readonly startDate: CodecTypes['pg/timestamptz-string@1']['output'];
-      readonly endDate: CodecTypes['pg/timestamptz-string@1']['output'] | null;
+      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
+      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
       readonly achievements: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
       readonly profileId: CodecTypes['pg/text@1']['output'];
     };
@@ -279,8 +279,8 @@ export type FieldInputTypes = {
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly company: CodecTypes['pg/text@1']['input'];
       readonly position: CodecTypes['pg/text@1']['input'];
-      readonly startDate: CodecTypes['pg/timestamptz-string@1']['input'];
-      readonly endDate: CodecTypes['pg/timestamptz-string@1']['input'] | null;
+      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['input'];
+      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
       readonly achievements: ReadonlyArray<CodecTypes['pg/text@1']['input']>;
       readonly profileId: CodecTypes['pg/text@1']['input'];
     };
@@ -311,11 +311,11 @@ export type StorageColumnTypes = {
     readonly experience: {
       readonly achievements: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
       readonly company: CodecTypes['pg/text@1']['output'];
-      readonly endDate: CodecTypes['pg/timestamptz-string@1']['output'] | null;
+      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
       readonly id: CodecTypes['pg/text@1']['output'];
       readonly position: CodecTypes['pg/text@1']['output'];
       readonly profileId: CodecTypes['pg/text@1']['output'];
-      readonly startDate: CodecTypes['pg/timestamptz-string@1']['output'];
+      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
     };
     readonly profile: {
       readonly createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
@@ -344,11 +344,11 @@ export type StorageColumnInputTypes = {
     readonly experience: {
       readonly achievements: ReadonlyArray<CodecTypes['pg/text@1']['input']>;
       readonly company: CodecTypes['pg/text@1']['input'];
-      readonly endDate: CodecTypes['pg/timestamptz-string@1']['input'] | null;
+      readonly endDate: CodecTypes['pg/timestamptz-temporal@1']['input'] | null;
       readonly id: CodecTypes['pg/text@1']['input'];
       readonly position: CodecTypes['pg/text@1']['input'];
       readonly profileId: CodecTypes['pg/text@1']['input'];
-      readonly startDate: CodecTypes['pg/timestamptz-string@1']['input'];
+      readonly startDate: CodecTypes['pg/timestamptz-temporal@1']['input'];
     };
     readonly profile: {
       readonly createdAt: CodecTypes['pg/timestamptz-string@1']['input'];
@@ -397,8 +397,8 @@ export namespace Models {
     id: CodecTypes['pg/text@1']['output'];
     company: CodecTypes['pg/text@1']['output'];
     position: CodecTypes['pg/text@1']['output'];
-    startDate: CodecTypes['pg/timestamptz-string@1']['output'];
-    endDate: CodecTypes['pg/timestamptz-string@1']['output'] | null;
+    startDate: CodecTypes['pg/timestamptz-temporal@1']['output'];
+    endDate: CodecTypes['pg/timestamptz-temporal@1']['output'] | null;
     achievements: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
     profileId: CodecTypes['pg/text@1']['output'];
     profile: public_Profile;
@@ -461,12 +461,12 @@ type ContractBase = Omit<
                 };
                 readonly startDate: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
                   readonly nullable: false;
                 };
                 readonly endDate: {
                   readonly nativeType: 'timestamptz';
-                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
                   readonly nullable: true;
                 };
                 readonly achievements: {
@@ -685,14 +685,14 @@ type ContractBase = Omit<
                 readonly nullable: false;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
                 };
               };
               readonly endDate: {
                 readonly nullable: true;
                 readonly type: {
                   readonly kind: 'scalar';
-                  readonly codecId: 'pg/timestamptz-string@1';
+                  readonly codecId: 'pg/timestamptz-temporal@1';
                 };
               };
               readonly achievements: {

@@ -4,6 +4,7 @@ import { Module } from '@nestjs/common';
 import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { ProfileModule } from './profile/profile.module.js';
+import { PrismaModule } from './prisma/prisma.module.js';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { ProfileModule } from './profile/profile.module.js';
         ApolloServerPluginLandingPageLocalDefault(),
       ]
     }),
+    PrismaModule,
     ProfileModule
   ],
 })

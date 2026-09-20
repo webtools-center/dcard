@@ -2,29 +2,38 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
-input CreateProfileInput {
-  """Example field (placeholder)"""
-  exampleField: Int!
-}
-
-type Mutation {
-  createProfile(createProfileInput: CreateProfileInput!): Profile!
-  removeProfile(id: Int!): Profile!
-  updateProfile(updateProfileInput: UpdateProfileInput!): Profile!
+type Experience {
+  achievements: [String!]!
+  company: String!
+  endDate: String
+  id: ID!
+  position: String!
+  startDate: String!
 }
 
 type Profile {
-  """Example field (placeholder)"""
-  exampleField: Int!
+  description: String
+  experiences: [Experience!]!
+  id: ID!
+  name: String!
+  projects: [Project!]!
+  skills: [Skill!]!
+  socialLinks: [String!]!
+}
+
+type Project {
+  description: String
+  id: ID!
+  name: String!
+  url: String!
 }
 
 type Query {
-  all: String!
-  profile(id: Int!): Profile!
+  profile: Profile!
 }
 
-input UpdateProfileInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
+type Skill {
+  category: String
+  id: ID!
+  name: String!
 }

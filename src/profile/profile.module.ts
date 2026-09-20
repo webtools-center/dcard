@@ -5,4 +5,4 @@ import { ProfileResolver } from './profile.resolver.js';
 @Module({
   providers: [ProfileResolver, ProfileService],
 })
-export class ProfileModule {}
+export class ProfileModule { }
