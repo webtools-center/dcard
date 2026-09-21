@@ -380,10 +380,10 @@ export namespace Models {
     description: CodecTypes['pg/text@1']['output'] | null;
     socialLinks: ReadonlyArray<CodecTypes['pg/text@1']['output']>;
     createdAt: CodecTypes['pg/timestamptz-string@1']['output'];
-    experiences: public_Experience[];
+    experience: public_Experience[];
     projects: public_Project[];
     skills: public_Skill[];
-    readonly [RelationKeys]?: 'experiences' | 'projects' | 'skills';
+    readonly [RelationKeys]?: 'experience' | 'projects' | 'skills';
   };
   export type public_Skill = {
     id: CodecTypes['pg/text@1']['output'];
@@ -761,7 +761,7 @@ type ContractBase = Omit<
               };
             };
             readonly relations: {
-              readonly experiences: {
+              readonly experience: {
                 readonly to: {
                   readonly namespace: 'public' & NamespaceId;
                   readonly model: 'Experience';

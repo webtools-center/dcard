@@ -13,7 +13,7 @@ type Experience {
 
 type Profile {
   description: String
-  experiences: [Experience!]!
+  experience: [Experience!]!
   id: ID!
   name: String!
   projects: [Project!]!

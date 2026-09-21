@@ -5,7 +5,7 @@ model Profile {
   description String?
   socialLinks String[]          @default([])
   skills      Skill[]
-  experiences Experience[]
+  experience  Experience[]
   projects    Project[]
   createdAt   TimestamptzString @default(now())
 }

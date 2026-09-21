@@ -9,7 +9,7 @@ export class ProfileService {
     return await this.prisma.client.orm
       .public.Profile
       .include('skills')
-      .include('experiences')
+      .include('experience')
       .include('projects')
       .first();
   }

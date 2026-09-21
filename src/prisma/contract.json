@@ -164,7 +164,7 @@
               }
             },
             "relations": {
-              "experiences": {
+              "experience": {
                 "cardinality": "1:N",
                 "on": {
                   "localFields": [
