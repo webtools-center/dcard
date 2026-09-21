@@ -29,9 +29,9 @@ async function main() {
       position: 'Engineer',
       startDate: '2023-01-01 01:00:00+05',
       achievements: [
-        'Проектирование и генерация отказоустойчивых бэкенд-архитектур на NestJS, Prisma и GraphQL.',
-        'Оптимизация реляционных схем БД и построение высоконагруженных API.',
-        'Автоматизация систем CI/CD и контейнеризация приложений.'
+        'Спроектировал отказоустойчивую бэкенд-архитектуру приложения на NestJS, Prisma и GraphQL.',
+        'Структурировал и оптимизировал схему БД.',
+        'Реализовал развертывание приложения в контейнерах.'
       ],
       profileId: profile.id
     },
@@ -40,7 +40,7 @@ async function main() {
   await db.orm.public.Project.createAll([
     {
       name: 'Digital Card API (DCard)',
-      description: 'GraphQL API на NestJS, Prisma и Docker для презентации профиля.',
+      description: 'GraphQL API цифовых визиток на NestJS, Prisma и Docker.',
       url: 'https://github.com/webtools.center/dcard',
       profileId: profile.id
     },
