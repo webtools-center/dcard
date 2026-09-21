@@ -8,7 +8,7 @@ async function main() {
 
   const profile = await db.orm.public.Profile.create({
     name: "Алексей Морозов",
-    description: 'Программист',
+    description: 'Программист. Трудяга и умница :)',
     socialLinks: ['https://t.me/tavsiup', 'https://vk.ru/luarussia'],
   });
 
@@ -16,8 +16,8 @@ async function main() {
     { name: 'TypeScript', category: 'Backend', profileId: profile.id },
     { name: 'Node.js', category: 'Backend', profileId: profile.id },
     { name: 'NestJS', category: 'Backend', profileId: profile.id },
-    { name: 'GraphQL / Apollo', category: 'Backend', profileId: profile.id },
-    { name: 'Prisma 8 ORM', category: 'Database', profileId: profile.id },
+    { name: 'GraphQL', category: 'Backend', profileId: profile.id },
+    { name: 'Prisma', category: 'Database', profileId: profile.id },
     { name: 'PostgreSQL', category: 'Database', profileId: profile.id },
     { name: 'Docker', category: 'DevOps', profileId: profile.id },
     { name: 'Git', category: 'DevOps', profileId: profile.id }
@@ -25,8 +25,8 @@ async function main() {
 
   await db.orm.public.Experience.createAll([
     {
-      company: 'Research & Engineering Gmbh',
-      position: 'Lead Engineer',
+      company: 'Research & Engineering LTD',
+      position: 'Engineer',
       startDate: '2023-01-01 01:00:00+05',
       achievements: [
         'Проектирование и генерация отказоустойчивых бэкенд-архитектур на NestJS, Prisma и GraphQL.',
@@ -41,7 +41,7 @@ async function main() {
     {
       name: 'Digital Card API (DCard)',
       description: 'GraphQL API на NestJS, Prisma и Docker для презентации профиля.',
-      url: 'https://github.com/webtools.center/digital-card',
+      url: 'https://github.com/webtools.center/dcard',
       profileId: profile.id
     },
   ]);
